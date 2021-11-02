@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  color: white;
+  margin: auto auto;
+  background-color: rgb(35, 35, 73);
+}
+#binaryForm{
+  text-align: center;
+}
+#input{
+  color: black;
+}
+#output-container{
+  text-align: center;
+}
+#output{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wrapper{
+  width: 95%;
+  margin: 10em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
