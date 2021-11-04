@@ -9,23 +9,29 @@
   </head>
   <body>
     <div id="container">
-      <div id="ri1-wrapper" class="ri-wrapper">
-        <input type="number" id="ri1" class="radius-input">
-      </div>
-      <div id="ri2-wrapper" class="ri-wrapper">
-        <input type="number" id="ri2" class="radius-input">
-      </div>
-      <div id="ri3-wrapper" class="ri-wrapper">
-        <input type="number" id="ri3" class="radius-input">
-      </div>
-      <div id="ri4-wrapper" class="ri-wrapper">
-        <input type="number" id="ri4" class="radius-input">
+      <h1>CSS Border-Radius Previewer</h1>
+      <h3>Type some numbers in the boxes to see the border-radius change for each corner</h3>
+      <div id="top">
+        <div id="ri1-wrapper" class="ri-wrapper">
+          <input type="number" id="ri1" class="radius-input">
+        </div>
+        <div id="ri2-wrapper" class="ri-wrapper">
+          <input type="number" id="ri2" class="radius-input">
+        </div>
       </div>
       <div id="border">
-        <canvas id="box" style="background-color: #cacaca;">
+        <div id="box">
+        </div>
+      </div>
+      <div id="bottom">
+        <div id="ri3-wrapper" class="ri-wrapper">
+          <input type="number" id="ri3" class="radius-input">
+        </div>
+        <div id="ri4-wrapper" class="ri-wrapper">
+          <input type="number" id="ri4" class="radius-input">
+        </div>
       </div>
     </div>
-
     <script src="main.js" async defer></script>
   </body>
 </html>
