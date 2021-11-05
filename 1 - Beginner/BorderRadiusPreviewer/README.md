@@ -1,4 +1,4 @@
-#Border Radius Previewer
+Border Radius Previewer
 -----
 This mini-project is a simple interactive CSS Border-Radius previewer.
 
