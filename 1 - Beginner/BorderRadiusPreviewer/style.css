@@ -3,17 +3,22 @@
   font-size: 25px;
 }
 
+html, body{
+  height: 100vh;
+}
+
 body{
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
   background-color:#28264d;
 }
 
 #container{
+  margin-top: auto;
+  margin-bottom: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 #container h1, h3{
   text-align: center;
@@ -48,6 +53,7 @@ body{
   background-color: #773737;
   height: 15em;
   width: 100%;
+  border-top-left-radius: 5px;
 }
 
 .radius-input{
