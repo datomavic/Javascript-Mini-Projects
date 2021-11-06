@@ -1,29 +1,71 @@
+*{
+  font-family: Helvetica;
+}
+
 html, body{
   height: auto;
   margin: auto;
+  margin-top: 20px;
   display: flex;
   align-items: center;
+  background-color:rgb(53, 50, 73)
+
 }
 
 #container{
-  margin-top: 20vh;
   background-color: orange;
   height: 500px;
   width: 300px;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
+  align-items: center;
 }
 
 #output-wrapper{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-#rows-wrapper{
-  margin-top: 95px;
-  margin-left: 5px;
-  margin-right: 5px;
+  align-items: center;
+  height: 100px;
+  width: 95%;
+  margin-top: 5px;
   margin-bottom: 5px;
+  background-color: #a0937f;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+#output{
+  font-size: 55px;
+  resize: none;
+  height: 50px;
+  text-align: right;
+  width: 100%;
+  overflow-x:scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+/*Make calculator's output display scroll-bar invisible*/
+::-webkit-scrollbar{
+  height: 0px;
+  background: black;
+}
+
+#answer{
+  font-size: 20px;
+  width: 100%;
+  height: 1px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+#rows-wrapper{
+  margin-left: 5px;
+  margin-right: 5px
+
 }
 
 .row{
@@ -35,15 +77,22 @@ html, body{
 }
 
 .operator, .number{
-  width: 24%;
+  width: 20px;
   background-color: #dd9000fd;
   border: solid 1px black;
   text-align: center;
   border-radius: 5px;
-  margin: 0 1px;
+  margin: 0px 1px;
+  padding: 25px;
+  font-size: 25px;
 }
 
+#zero{
+  width: 35%;
+}
+
+
 .operator:hover, .number:hover{
-  background-color: rgb(255, 207, 145);
+  background-color: #ffcf91;
   cursor: pointer;
 }
