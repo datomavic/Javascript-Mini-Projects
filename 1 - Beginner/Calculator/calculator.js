@@ -25,20 +25,31 @@ for(let key of Object.keys(calculator)){
 }
 
 let output = document.querySelector("#output");
-let outputArray = output.innerText.split(" ");
+let ans = document.querySelector("#answer");
+let inputArray = output.innerText.split(" ");
 
+//User has clicked a button, do stuff.
 function input(){
-  let currentOutput = output.innerText;
-  let lastItem = outputArray[outputArray.length - 1];
-
-   //If entered value is equals sign "=", begin processing outputArray.
+   //If user clicks equals "="
   if(this.innerText == "="){
-    equals(outputArray);
+    equals();
+    return;
+  }
+  //If user clicks clear "C"
+  if(this.innerText == "C"){
+    clear();
+    return;
+  }
+  //If user clicks all clear "AC"
+  if(this.innerText == "AC"){
+    allClear();
     return;
   }
 
-  /***Append entered values with spaces or no spaces, depending on input/current output***/
-
+  /***Start appending entered values as string with spaces or no spaces, depending on current output***/
+  
+  let currentOutput = output.innerText;
+  let lastItem = inputArray[inputArray.length - 1];
   //If entered value is an operator, add space before it and append to output string
   if(this.className == "operator"){
     if(isNaN(lastItem))
@@ -48,63 +59,127 @@ function input(){
   }
   //Otherwise...
   else{
-    //if last item in outputArray is an operator (and not a decimal), add space before entered value.
+    //if last item in inputArray is an operator (and not a decimal), add space before entered value.
     if(isNaN(lastItem) && lastItem != ".")
       output.innerText = currentOutput+" "+this.innerText;
     //Otherwise if entered value is a number...
     else{
-      //if calculator's output display only has a single 0, replace 0 with new entered number
-      if(outputArray.length = 1 && lastItem == "0")
+      //if calculator's output display only has a single 0, 
+      //or has done previous calculation, replace with new entered number
+      if(inputArray.length = 1 && lastItem == "0" || equals.previouslyCalculated)
         output.innerText = this.innerText;
       //otherwise, append entered value without space
       else
         output.innerText = currentOutput + this.innerText;
     }
- 
   }
 
-  //After string is formatted for current input, update outputArray with string by splitting by spaces
-  outputArray = output.innerText.split(" ");
+  //After string is formatted for current input, update inputArray with string separated by spaces
+  inputArray = output.innerText.split(" ");
   //Keep output scrolled to left in calculator's view.
   output.scrollLeft = output.scrollWidth;
-  console.log(outputArray);
-  console.log(output.innerText);
+  //Update equals.previouslyCalculated sentinel back to false.
+  equals.previouslyCalculated = false;
 }
 
 
-//to be finished
-function equals(arr){
-  if(arr.length < 3)
+
+/***When user clicks equals "=" on calculator, begin calculation of inputArray***/
+function equals(){
+  equals.previouslyCalculated = false;
+
+  //function for check if inputArray has any operators
+  let hasOperator = (inputArray) => {
+    let operators = ["×", "÷", "+", "-"];
+    return inputArray.some((element) => operators.includes(element));
+  };
+
+  //If current input doesnt have enough elements to process or has trailing operator, return.
+  if(inputArray.length < 3 || hasOperator([inputArray[inputArray.length - 1]]))
     return;
-  while(hasOperator(arr)){
-    for(let index in arr){
-      if(arr[index] == "×"){
-        let ans = +arr[arr.indexOf("×") - 1] * +arr[arr.indexOf("×") + 1];
-        arr.splice(index-1, 3, ans);
+
+  //function for check if input array contains specific operator
+  let contains = (operator) => {
+    return inputArray.includes(operator);
+  }
+
+  //function that returns operands "x" or "y" to be calculated. 
+  //x will be one index behind operator, y is one index ahead of operator.
+  let operand = (operator, operand) => {
+    if(operand == "x")
+      return +inputArray[inputArray.indexOf(operator) - 1]
+    else
+      return +inputArray[inputArray.indexOf(operator) + 1]
+  }
+
+  //while our inputArray still has operators, continue processing.
+  while(hasOperator(inputArray)){
+    for(let index in inputArray){
+      //following if statements is basically the P.E.M.D.A.S. process.
+      if(inputArray[index] == "×"){
+        let ans = operand("×", "x") * operand("×", "y");
+        inputArray.splice(index-1, 3, ans);
         break;
       }
-      if(arr[index] == "÷" && !arr.includes("×")){
-        let ans = +arr[arr.indexOf("÷") - 1] / +arr[arr.indexOf("÷") + 1];
-        arr.splice(index-1, 3, ans);
+      if(inputArray[index] == "÷" && !contains("×")){
+        let ans = operand("÷", "x") / operand("÷", "y"); 
+        inputArray.splice(index-1, 3, ans);
         break;
       }
-      if(arr[index] == "+" && !arr.includes("×") && !arr.includes("÷")){
-        let ans = +arr[arr.indexOf("+") - 1] + +arr[arr.indexOf("+") + 1];
-        arr.splice(index-1, 3, ans);
+      if(inputArray[index] == "+" && !contains("×") && !contains("÷")){
+        let ans = operand("+", "x") + operand("+", "y");
+        inputArray.splice(index-1, 3, ans);
         break;
       }
-      if(arr[index] == "-" && !arr.includes("×") && !arr.includes("÷") && !arr.includes("+")){
-        let ans = +arr[arr.indexOf("-") - 1] - +arr[arr.indexOf("-") + 1];
-        arr.splice(index-1, 3, ans);
+      if(inputArray[index] == "-" && !contains("×") && !contains("÷") && !contains("+")){
+        let ans = operand("-", "x") - operand("-", "y");
+        inputArray.splice(index-1, 3, ans);
         break;
       }
     }
-  }
-  output.innerText = arr[0];
-  console.log(arr);
+  } //Calculation complete. 
+
+  //inputArray has been reduced to a single element which is our answer.
+  //Display to output. 
+  output.innerText = inputArray[0];
+  answer.innerText = "Ans = "+inputArray[0];
+
+  //Calculation was completed, so update sentinel to true.
+  equals.previouslyCalculated = true;
 }
 
-function hasOperator(arr){
-  let operators = ["×", "÷", "+", "-"];
-  return arr.some((element) => operators.includes(element));
+
+
+/***When user clicks clear "C", clear last character of inputArray***/
+function clear(){
+  //if equals was previously called, dont use clear. exit.
+  if(equals.previouslyCalculated)
+   return;
+  
+  let arrLength = inputArray.length;
+  let lastItem = ""+inputArray[arrLength - 1];
+
+  //If inputArray has a single element of length 1, clear and replace with "0".
+  if(arrLength == 1 && inputArray[0].length == 1)
+    inputArray.splice(arrLength - 1, 1, "0");
+  //Otherwise, clear last character of last element in inputArray
+  else{
+    //if last item's length is only 1, clear element from inputArray
+    if(lastItem.length == 1)
+      inputArray.splice(arrLength - 1, 1);
+    //otherwise, remove last character from last element of inputArray.
+    else
+      inputArray[arrLength - 1] = lastItem.slice(0, lastItem.length - 1)
+  }
+
+  //Update calculator's output display
+  output.innerText = inputArray.join(" ");
+}
+
+
+
+/***When user clicks all clear "AC", clear entire inputArray (and insert 0)***/
+function allClear(){
+  inputArray = ["0"];
+  output.innerText = inputArray[0];
 }
