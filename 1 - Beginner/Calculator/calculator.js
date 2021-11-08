@@ -99,8 +99,9 @@ function input(){
 function equals(){
   equals.previouslyCalculated = false;
 
-  //If current input doesnt have enough elements to process or has trailing operator, return.
-  if(inputArray.length < 3 || hasOperator([inputArray[inputArray.length - 1]]))
+  //If current input doesnt have enough elements to process or has trailing operator/decimal, return.
+  let lastItem = inputArray[inputArray.length - 1];
+  if(inputArray.length < 3 || hasOperator([lastItem]) || lastItem == ".")
     return;
 
   //function for check if input array contains specific operator
