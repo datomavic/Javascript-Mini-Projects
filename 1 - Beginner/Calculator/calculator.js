@@ -21,7 +21,8 @@ const calculator = {
 };
 
 for(let key of Object.keys(calculator)){
-  key = document.querySelector("#"+key).addEventListener("click", input);
+  button = document.querySelector("#"+key);
+  button.addEventListener("click", input);
 }
 
 let output = document.querySelector("#output");
@@ -50,15 +51,12 @@ function input(){
   /***Start appending entered values as string with spaces or no spaces, depending on current output***/
   let outputString;
   let currentOutput = output.innerText;
-  let lastItem = inputArray[inputArray.length - 1];
+  let lastItem = ""+inputArray[inputArray.length - 1];
 
-  console.log(this.innerText);
   if(this.innerText == "Ans")
     outputString = clickedAns();
-  else if(this.innerText == "." && lastItem.includes(".")){
-    console.log("should skip");
+  else if(this.innerText == "." && lastItem.includes("."))
     return;
-  }
   else{
   //If entered value is an operator, check if last item in inputArray is also operator
     if(this.className == "operator"){
@@ -83,8 +81,13 @@ function input(){
         if(inputArray.length = 1 && lastItem == "0" || equals.previouslyCalculated)
           outputString = this.innerText;
         //otherwise, append entered value without space
-        else
-          outputString = currentOutput + this.innerText;
+        else{
+          if(lastItem == ansOutput.answer)
+            outputString = currentOutput + " × " +this.innerText;
+          else
+            outputString = currentOutput + this.innerText;
+
+        } 
       }
     }
   }
