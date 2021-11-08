@@ -158,7 +158,7 @@ function equals(){
   output.innerText = inputArray[0];
   output.scrollLeft = output.scrollWidth;
   ansOutput.innerText = "Ans = "+inputArray[0];
-  ansOutput.scrollLeft = ansOutput.scrollWidth;
+  ansOutput.scrollLeft = 0;
   ansOutput.answer = inputArray[0];
 
   //Calculation was completed, so update sentinel to true.
