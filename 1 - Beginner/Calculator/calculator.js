@@ -52,8 +52,13 @@ function input(){
   let currentOutput = output.innerText;
   let lastItem = inputArray[inputArray.length - 1];
 
+  console.log(this.innerText);
   if(this.innerText == "Ans")
     outputString = clickedAns();
+  else if(this.innerText == "." && lastItem.includes(".")){
+    console.log("should skip");
+    return;
+  }
   else{
   //If entered value is an operator, check if last item in inputArray is also operator
     if(this.className == "operator"){
