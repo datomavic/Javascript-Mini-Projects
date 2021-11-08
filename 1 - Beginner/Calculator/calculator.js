@@ -12,7 +12,7 @@ const calculator = {
   "decimal": undefined,
   "all-clear": undefined,
   "clear": undefined,
-  //"pos-neg": undefined,
+  "ans": undefined,
   "divide": undefined,
   "multiply": undefined,
   "minus": undefined,
@@ -25,7 +25,8 @@ for(let key of Object.keys(calculator)){
 }
 
 let output = document.querySelector("#output");
-let ans = document.querySelector("#answer");
+let ansOutput = document.querySelector("#answer");
+ansOutput.answer = 0;
 let inputArray = output.innerText.split(" ");
 
 //User has clicked a button, do stuff.
@@ -47,35 +48,45 @@ function input(){
   }
 
   /***Start appending entered values as string with spaces or no spaces, depending on current output***/
-  
+  let outputString;
   let currentOutput = output.innerText;
   let lastItem = inputArray[inputArray.length - 1];
-  //If entered value is an operator, add space before it and append to output string
-  if(this.className == "operator"){
-    if(isNaN(lastItem))
-      output.innerText = currentOutput.substring(0, currentOutput.length-1) + this.innerText;
-    else
-      output.innerText = currentOutput +" "+this.innerText;
-  }
-  //Otherwise...
+
+  if(this.innerText == "Ans")
+    outputString = clickedAns();
   else{
-    //if last item in inputArray is an operator (and not a decimal), add space before entered value.
-    if(isNaN(lastItem) && lastItem != ".")
-      output.innerText = currentOutput+" "+this.innerText;
-    //Otherwise if entered value is a number...
-    else{
-      //if calculator's output display only has a single 0, 
-      //or has done previous calculation, replace with new entered number
-      if(inputArray.length = 1 && lastItem == "0" || equals.previouslyCalculated)
-        output.innerText = this.innerText;
-      //otherwise, append entered value without space
+  //If entered value is an operator, check if last item in inputArray is also operator
+    if(this.className == "operator"){
+      if(isNaN(lastItem)){
+        if(lastItem == ".")
+          outputString = currentOutput.substring(0, currentOutput.length - 3) + this.innerText;
+        else
+          outputString = currentOutput.substring(0, currentOutput.length-1) + this.innerText;
+      }
       else
-        output.innerText = currentOutput + this.innerText;
+        outputString = currentOutput +" "+this.innerText;
+    }
+    //Otherwise...
+    else{
+      //if last item in inputArray is an operator (and not a decimal), add space before entered value.
+      if(isNaN(lastItem) && lastItem != ".")
+        outputString = currentOutput+" "+this.innerText;
+      //Otherwise if entered value is a number...
+      else{
+        //if calculator's output display only has a single 0, 
+        //or has done previous calculation, replace with new entered number
+        if(inputArray.length = 1 && lastItem == "0" || equals.previouslyCalculated)
+          outputString = this.innerText;
+        //otherwise, append entered value without space
+        else
+          outputString = currentOutput + this.innerText;
+      }
     }
   }
-
+  //Update output.innerText to be outputString
+  output.innerText = outputString;
   //After string is formatted for current input, update inputArray with string separated by spaces
-  inputArray = output.innerText.split(" ");
+  inputArray = outputString.split(" ");
   //Keep output scrolled to left in calculator's view.
   output.scrollLeft = output.scrollWidth;
   //Update equals.previouslyCalculated sentinel back to false.
@@ -87,12 +98,6 @@ function input(){
 /***When user clicks equals "=" on calculator, begin calculation of inputArray***/
 function equals(){
   equals.previouslyCalculated = false;
-
-  //function for check if inputArray has any operators
-  let hasOperator = (inputArray) => {
-    let operators = ["×", "÷", "+", "-"];
-    return inputArray.some((element) => operators.includes(element));
-  };
 
   //If current input doesnt have enough elements to process or has trailing operator, return.
   if(inputArray.length < 3 || hasOperator([inputArray[inputArray.length - 1]]))
@@ -142,7 +147,10 @@ function equals(){
   //inputArray has been reduced to a single element which is our answer.
   //Display to output. 
   output.innerText = inputArray[0];
-  answer.innerText = "Ans = "+inputArray[0];
+  output.scrollLeft = output.scrollWidth;
+  ansOutput.innerText = "Ans = "+inputArray[0];
+  ansOutput.scrollLeft = ansOutput.scrollWidth;
+  ansOutput.answer = inputArray[0];
 
   //Calculation was completed, so update sentinel to true.
   equals.previouslyCalculated = true;
@@ -183,3 +191,23 @@ function allClear(){
   inputArray = ["0"];
   output.innerText = inputArray[0];
 }
+
+
+
+/***When user clicks "Ans", enter previously calculated value***/
+function clickedAns(){
+  let lastItem = inputArray[inputArray.length - 1];
+  if(hasOperator([lastItem]))
+    inputArray.push(ansOutput.answer);
+  else
+    inputArray[inputArray.length - 1] = ansOutput.answer;
+  return inputArray.join(" ");
+}
+
+
+
+/***Helper function for checking if inputArray has any operators***/
+function hasOperator(inputArray){
+  let operators = ["×", "÷", "+", "-"];
+  return inputArray.some((element) => operators.includes(element));
+};
