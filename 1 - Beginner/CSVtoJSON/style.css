@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif;
+
+}
+html, body{
+  background-color: #0e3157;
+  margin: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+body{
+  display: flex;
+}
+
+
+#container{
+  width: auto;
+  height: auto;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+#container h2{
+  text-align: center;
+  color: #EEE2DC;
+}
+.content-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid #333131 2px;
+  border-radius: 1px;
+  padding: 5px;
+}
+
+.content-box{
+  display: flex;
+  height: 200px;
+  width: 300px;
+  resize: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  background-color: #8f7d84;
+  border-radius: 2px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.content-box:hover{
+  cursor: white;
+}
+textarea::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.content-box-wrapper{
+  display: flex;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.content-wrapper{
+  display: flex;
+  background-color:#BAB2B5;
+  border-radius: 5px;
+}
+
+#input-wrapper{
+  margin-bottom: 30px;
+}
+
+#output-wrapper{
+  margin-top: 30px;
+}
+
+.buttons-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#upload-button{
+  width: 100%;
+}
+
+#output{
+  margin-bottom: 10px;
+}
+
+button{
+  background-color: #a8375d;
+  font-weight: bold;
+  color: #eee2dc;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 1;
+}
+
+button:hover{
+  background-color: #b64b6e;
+}
+
+@media screen and (max-width: 341px){
+  .content-box{
+    height: 200px;
+    width: 275px;
+  }
+}
+@media screen and (max-width: 314px){
+  .content-box{
+    height: 200px;
+    width: 250px;
+  }
+}
+@media screen and (max-width: 281px){
+  .content-box{
+    height: 200px;
+    width: 230px;
+  }
+}
