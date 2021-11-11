@@ -2,10 +2,11 @@
 
 *{
   font-family: 'Roboto', sans-serif;
+  color: white;
 
 }
 html, body{
-  background-color: #0e3157;
+  background-color: #505468;
   margin: auto;
   overflow-x: hidden;
   height: 100vh;
@@ -25,7 +26,6 @@ body{
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: black;
   font-weight: bold;
 }
 
@@ -55,28 +55,24 @@ body{
   border-left-style: hidden;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  background-color: #8f7d84;
+  background-color: #cacad6;
   border-radius: 2px;
-  color: #000000;
-  font-weight: bold;
+  color: black;
 }
 
-.content-box:hover{
-  cursor: white;
-}
 textarea::-webkit-input-placeholder {
-  color: #000000;
+  color: #353535;
 }
 
 .content-box-wrapper{
   display: flex;
-  border: 3px solid black;
+  border: 3px solid #464866;
   border-radius: 5px;
 }
 
 .content-wrapper{
   display: flex;
-  background-color:#BAB2B5;
+  background-color:#0e395dca;
   border-radius: 5px;
 }
 
@@ -103,19 +99,19 @@ textarea::-webkit-input-placeholder {
 }
 
 button{
-  background-color: #a8375d;
+  background-color: rgb(167, 236, 205);
   font-weight: bold;
-  color: #eee2dc;
+  color: #001f3fca;
   border-radius: 5px;
   border: 1px solid black;
   padding: 8px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
   opacity: 1;
 }
 
 button:hover{
-  background-color: #b64b6e;
+  background-color: rgb(143, 211, 180);
 }
 
 @media screen and (max-width: 341px){
