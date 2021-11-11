@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap');
 
 *{
-  font-family: 'Roboto', sans-serif;
-  color: white;
-
+  font-family: 'Red Hat Mono', monospace;
+  color: rgb(255, 255, 255);
 }
+
 html, body{
-  background-color: #505468;
+  background-color: #64687a;
   margin: auto;
   overflow-x: hidden;
   height: 100vh;
@@ -31,7 +31,7 @@ body{
 
 #container h2{
   text-align: center;
-  color: #EEE2DC;
+  color: #ffffff;
 }
 .content-wrapper{
   display: flex;
@@ -57,7 +57,7 @@ body{
   -moz-box-shadow: none;
   background-color: #cacad6;
   border-radius: 2px;
-  color: black;
+  color: #000000;
 }
 
 textarea::-webkit-input-placeholder {
@@ -88,8 +88,20 @@ textarea::-webkit-input-placeholder {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  text-align: center;
 }
 
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.wrapper p{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 #upload-button{
   width: 100%;
 }
@@ -99,7 +111,7 @@ textarea::-webkit-input-placeholder {
 }
 
 button{
-  background-color: rgb(167, 236, 205);
+  background-color: #a7eccd;
   font-weight: bold;
   color: #001f3fca;
   border-radius: 5px;
@@ -108,10 +120,25 @@ button{
   cursor: pointer;
   transition: 0.1s;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover{
-  background-color: rgb(143, 211, 180);
+  background-color: #8fd3b4;
+}
+
+#convert-button, #download-button, #copy-button{
+  width: 100px;
+}
+
+.fas{
+  color: #3a3a3a;
+}
+
+.fa-arrows-alt-h{
+  color: #EEE2DC;
 }
 
 @media screen and (max-width: 341px){

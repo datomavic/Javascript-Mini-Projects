@@ -6,23 +6,35 @@
     <meta name="description" content="CSV to JSON Converter">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/89bbd3450e.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
     <div id="container">
-      <h2>CSV ⇄ JSON <br> Converter</h2>
+      <h2>
+        .CSV
+        <i class="fas fa-arrows-alt-h"></i> 
+        .JSON
+        <br>
+        Converter
+      </h2>
       <div id="input-wrapper" class="content-wrapper">
         <div id="input" class="content-box-wrapper">
           <textarea id="input-content" class="content-box" placeholder="Enter CSV/JSON Text"></textarea>
         </div>
-        <p>OR</p>
+        <p>Or upload file:</p>
         <div class="buttons-wrapper">
-          <button id="upload-button">Upload File</button>
+          <button id="upload-button">
+            <i class="fas fa-upload fa-2x"></i>
+          </button>
         </div>
       </div>
 
       <div id="convert-wrapper" class="buttons-wrapper">
-        <button id="convert-button">Convert</button>
+        <button id="convert-button">
+          <i class="fas fa-angle-double-down fa-2x"></i>
+        </button>
       </div>
       
       <div id="output-wrapper" class="content-wrapper">
@@ -30,8 +42,18 @@
           <textarea id="output-content" class="content-box" readonly></textarea>
         </div>
         <div class="buttons-wrapper">
-          <button id="download">Download</button>
-          <button id="copy">Copy text</button>
+          <div class="wrapper">
+            <p>Download</p>
+            <button id="download-button">
+              <i class="fas fa-download fa-2x"></i>
+            </button>
+          </div>
+          <div class="wrapper">
+            <p>Copy</p>
+            <button id="copy-button">
+              <i class="fas fa-copy fa-2x"></i>
+            </button>
+          </div>
         </div>
       </div>
 
