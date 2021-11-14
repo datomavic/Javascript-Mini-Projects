@@ -4,11 +4,13 @@ let output = document.querySelector("#output-content");
 //Booleans to keep track of current data type
 let isCSV = false;
 let isJSON = false;
-let processed = false;
+//Boolean for keeping track of converted or not.
+let converted = false;
 //Add event listener to every button
 document.querySelectorAll("button").forEach((element) => {
   element.addEventListener("click", onClickProcess);
 });
+
 
 /**
  * onClickProcess
@@ -80,7 +82,7 @@ function csvToJson(content){
 
   let outputText = JSON.stringify(json, null, 1);
   output.innerText = outputText;
-  processed = true;
+  converted = true;
 }
 
 /**
@@ -103,18 +105,21 @@ function jsonToCsv(content){
  * to be downloaded.
  */
 function download(){
-  if(processed == false)
+  if(converted == false)
     return;
   let type = isJSON == true ? 'text/csv' : 'application/json';
-  //type = `${type};charset=utf-8`;
-  let fileName = "converted."+type.split('/')[1];
+  type = `${type};charset=utf-8`;
+  let fileName = "converted."+type.split(';')[0];
   let blob = new Blob([output.value], {type})
   a = document.createElement('a');
   url = URL.createObjectURL(blob);
   a.href = url;
   a.download = fileName;
   document.body.appendChild(a);
-  a.click();
+
+
+  if(confirm("Are you sure you'd like to download your converted file?"))
+    a.click();
 }
 
 /**
@@ -125,5 +130,9 @@ function download(){
  * textarea and copy it to user's clipboard.
  */
 function copy(){
-
+  if(output.value.length > 0){
+    navigator.clipboard.writeText(output.value);
+  }
 }
+
+
