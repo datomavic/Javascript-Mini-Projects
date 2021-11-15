@@ -24,7 +24,6 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }
@@ -32,7 +31,9 @@ body{
 #container h2{
   text-align: center;
   color: #ffffff;
+  margin-bottom: 10px;
 }
+
 .content-wrapper{
   display: flex;
   flex-direction: column;
@@ -58,6 +59,10 @@ body{
   background-color: #cacad6;
   border-radius: 2px;
   color: #000000;
+}
+
+textarea{
+  white-space: pre-wrap;
 }
 
 textarea::-webkit-input-placeholder {
@@ -102,6 +107,7 @@ textarea::-webkit-input-placeholder {
   margin-top: 0;
   margin-bottom: 10px;
 }
+
 #upload-button{
   width: 100%;
 }
@@ -131,6 +137,7 @@ button:hover{
 
 #convert-button, #download-button, #copy-button{
   width: 100px;
+  height: 45px;
 }
 
 .fas{
