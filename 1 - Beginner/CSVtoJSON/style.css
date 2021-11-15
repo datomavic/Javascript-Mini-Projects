@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
 *{
   font-family: 'Red Hat Mono', monospace;
   color: rgb(255, 255, 255);
@@ -8,7 +9,6 @@
 html, body{
   background-color: #64687a;
   margin: auto;
-  overflow-x: hidden;
   height: 100vh;
 }
 
@@ -19,19 +19,30 @@ body{
 
 #container{
   width: auto;
-  height: auto;
   margin: auto auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 10px;
-  font-weight: bold;
+  zoom: 1.5;
+  z-index: 1;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
-#container h2{
+#container h3{
   text-align: center;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  background-color: #0e395dca;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: solid #333131 2px;
+  border-left: solid #333131 2px;
+  border-right: solid #333131 2px;
+  border-bottom: solid #333131 1px;
+  z-index: 0;
 }
 
 .content-wrapper{
@@ -59,6 +70,7 @@ body{
   background-color: #cacad6;
   border-radius: 2px;
   color: #000000;
+  font-size: 12px;
 }
 
 textarea{
@@ -67,11 +79,12 @@ textarea{
 
 textarea::-webkit-input-placeholder {
   color: #353535;
+  font-size: 12px;
 }
 
 .content-box-wrapper{
   display: flex;
-  border: 3px solid #464866;
+  border: 3px solid #565877;
   border-radius: 5px;
 }
 
@@ -83,6 +96,8 @@ textarea::-webkit-input-placeholder {
 
 #input-wrapper{
   margin-bottom: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 #output-wrapper{
@@ -118,7 +133,6 @@ textarea::-webkit-input-placeholder {
 
 button{
   background-color: #a7eccd;
-  font-weight: bold;
   color: #001f3fca;
   border-radius: 5px;
   border: 1px solid black;
@@ -140,6 +154,21 @@ button:hover{
   height: 45px;
 }
 
+#convert-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#convert-wrapper p{
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+#myFile{
+
+}
 .fas{
   color: #3a3a3a;
 }
