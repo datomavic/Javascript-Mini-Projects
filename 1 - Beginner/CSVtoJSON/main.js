@@ -213,7 +213,7 @@ function download(){
 function copy(){
   if(output.value.length == 0 || copy.running)
     return;
-  //To avoid code from executing twice asynchronously
+  //Function property to avoid code from executing twice asynchronously
   copy.running = true;
   //Element selectors for copy-button icons
   let icon = document.querySelector("#copy-icon");
@@ -279,6 +279,6 @@ function copy(){
  * -----
  * Will clear the output box when clear button is clicked
  */
-function clear(){output.value = "";}
+function clear(){output.value = ""}
 
 

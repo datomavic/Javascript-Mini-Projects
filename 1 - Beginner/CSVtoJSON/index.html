@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="utf-8">
     <title>CSV to JSON</title>
@@ -9,18 +10,22 @@
     <link rel="stylesheet" href="fontawesome.min.css">
     <script src="https://kit.fontawesome.com/89bbd3450e.js" crossorigin="anonymous"></script>
   </head>
-  <body>
 
+  <body>
     <div id="container">
+
       <h3>
         .CSV
         <i class="fas fa-arrows-alt-h"></i> 
         .JSON
       </h3>
+      
       <div id="input-wrapper" class="content-wrapper">
+
         <div id="input" class="content-box-wrapper">
           <textarea id="input-content" class="content-box" placeholder="Enter CSV/JSON Text"></textarea>
         </div>
+
         <p>Or upload file:</p>
         <div class="buttons-wrapper">
             <label title="Upload file" id="myLabel">
@@ -28,6 +33,7 @@
               <i class="fas fa-upload fa-2x"></i>
             </label>
         </div>
+
       </div>
 
       <div id="convert-wrapper" class="buttons-wrapper">
@@ -38,21 +44,27 @@
       </div>
       
       <div id="output-wrapper" class="content-wrapper">
+
         <div id="output" class="content-box-wrapper">
+
           <div id="clear-wrapper" class="wrapper">
             <button id="clear-button" title="Clear">
               <i class="fas fa-ban"></i>
             </button>
           </div>
           <textarea id="output-content" class="content-box" readonly></textarea>
+
         </div>
+
         <div class="buttons-wrapper">
+
           <div class="wrapper">
             <p>Download</p>
             <button id="download-button" title="Download as file">
               <i class="fas fa-download fa-2x"></i>
             </button>
           </div>
+
           <div class="wrapper">
             <p>Copy</p>
             <button id="copy-button" title="Copy to Clipboard">
@@ -61,9 +73,13 @@
           </div>
 
         </div>
+
       </div>
 
     </div>
+
     <script src="main.js" async defer></script>
+
   </body>
+
 </html>
