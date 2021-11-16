@@ -43,7 +43,7 @@ function upload(){
   let fileReader = new FileReader();
   fileReader.readAsText(this.files[0]);
   fileReader.onload = () => {
-    input.innerHTML = ""+fileReader.result;
+    input.value = ""+fileReader.result;
     convert(fileReader.result);
   };
 }
