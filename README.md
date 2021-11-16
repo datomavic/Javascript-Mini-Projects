@@ -11,4 +11,6 @@ These apps are categorized into 3 levels of difficulty:
 
 I will update this repo as I complete these apps.
 
-These are Javascript apps based on user stories found at: https://github.com/florinpop17/app-ideas
+-------
+
+Some of these apps are based on user stories found <a href="https://github.com/florinpop17/app-ideas">here</a>.
