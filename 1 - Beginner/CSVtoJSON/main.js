@@ -17,7 +17,8 @@ let convertedCSV;
 document.querySelectorAll("button").forEach((element) => {
   element.addEventListener("click", onClickProcess);
 });
-
+//Add event listener to our upload file button
+document.querySelector("#myFile").addEventListener("change", upload);
 
 /**
  * onClickProcess
@@ -38,6 +39,13 @@ function onClickProcess(){
  * convert this file into a string to be converted.
  */
 function upload(){
+  debugger;
+  let fileReader = new FileReader();
+  fileReader.readAsText(this.files[0]);
+  fileReader.onload = () => {
+    input.innerHTML = ""+fileReader.result;
+    convert(fileReader.result);
+  };
 }
 
 /**
@@ -265,5 +273,12 @@ function copy(){
     copy.running = false;
   }, 1800);
 }
+
+/**
+ * clear
+ * -----
+ * Will clear the output box when clear button is clicked
+ */
+function clear(){output.value = "";}
 
 

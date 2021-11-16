@@ -1,6 +1,5 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 *{
   font-family: 'Red Hat Mono', monospace;
   color: rgb(255, 255, 255);
@@ -14,8 +13,8 @@ html, body{
 
 body{
   display: flex;
+  margin-top: auto;
 }
-
 
 #container{
   width: auto;
@@ -123,8 +122,30 @@ textarea::-webkit-input-placeholder {
   margin-bottom: 10px;
 }
 
-#upload-button{
+#myLabel input{
+  position: absolute;
+  top: -1000px;
   width: 100%;
+  height: 100%;
+}
+
+#myLabel {
+  background-color: #a7eccd;
+  color: #001f3fca;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.1s;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#myLabel:hover{
+  background-color: #8fd3b4;
 }
 
 #output{
@@ -150,8 +171,32 @@ button:hover{
 }
 
 #convert-button, #download-button, #copy-button{
-  width: 100px;
+  width: 120px;
   height: 45px;
+}
+
+#clear-wrapper{
+  margin-left: 3px;
+  margin-top: 1px;
+  width: 300px;
+  transition: .4s;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  opacity: .5;
+}
+
+#clear-wrapper:hover{
+  transition: .4s;
+  opacity: .9;
+}
+
+#clear-button{
+  background-color: rgb(212, 45, 45);
+  padding: 3px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #convert-wrapper{
@@ -166,9 +211,6 @@ button:hover{
   color: #ffffff;
 }
 
-#myFile{
-
-}
 .fas{
   color: #3a3a3a;
 }
@@ -177,21 +219,11 @@ button:hover{
   color: #EEE2DC;
 }
 
-@media screen and (max-width: 341px){
-  .content-box{
-    height: 200px;
-    width: 275px;
-  }
+/*Scrollbar adjustments*/
+::-webkit-scrollbar {
+  width: 2px; 
+  background: transparent;
 }
-@media screen and (max-width: 314px){
-  .content-box{
-    height: 200px;
-    width: 250px;
-  }
-}
-@media screen and (max-width: 281px){
-  .content-box{
-    height: 200px;
-    width: 230px;
-  }
+::-webkit-scrollbar-thumb {
+  background: #474242;
 }

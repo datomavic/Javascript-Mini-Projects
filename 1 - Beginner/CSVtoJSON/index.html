@@ -23,36 +23,43 @@
         </div>
         <p>Or upload file:</p>
         <div class="buttons-wrapper">
-          <button id="upload-button">
-            <i class="fas fa-upload fa-2x"></i>
-          </button>
+            <label title="Upload file" id="myLabel">
+              <input  id="myFile" type="file" accept=".json,.csv"/>
+              <i class="fas fa-upload fa-2x"></i>
+            </label>
         </div>
       </div>
 
       <div id="convert-wrapper" class="buttons-wrapper">
         <p>Convert</p>
-        <button id="convert-button">
+        <button id="convert-button" title="Convert">
           <i class="fas fa-angle-double-down fa-2x"></i>
         </button>
       </div>
       
       <div id="output-wrapper" class="content-wrapper">
         <div id="output" class="content-box-wrapper">
+          <div id="clear-wrapper" class="wrapper">
+            <button id="clear-button" title="Clear">
+              <i class="fas fa-ban"></i>
+            </button>
+          </div>
           <textarea id="output-content" class="content-box" readonly></textarea>
         </div>
         <div class="buttons-wrapper">
           <div class="wrapper">
             <p>Download</p>
-            <button id="download-button">
+            <button id="download-button" title="Download as file">
               <i class="fas fa-download fa-2x"></i>
             </button>
           </div>
           <div class="wrapper">
             <p>Copy</p>
-            <button id="copy-button">
+            <button id="copy-button" title="Copy to Clipboard">
               <i id="copy-icon" class="fas fa-copy fa-2x"></i>
             </button>
           </div>
+
         </div>
       </div>
 
