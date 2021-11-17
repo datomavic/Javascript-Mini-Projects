@@ -53,3 +53,8 @@ textarea::-webkit-input-placeholder {
 #result::-webkit-input-placeholder{
   padding-top: 30px;
 }
+
+::-webkit-scrollbar {
+  width: 10px; 
+  background: transparent;
+}
