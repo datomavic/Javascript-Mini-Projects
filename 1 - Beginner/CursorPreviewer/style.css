@@ -47,6 +47,7 @@ textarea::-webkit-input-placeholder {
 #result{
   overflow-x: hidden;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #result::-webkit-input-placeholder{
