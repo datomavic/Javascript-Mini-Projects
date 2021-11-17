@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CursorPreviewr</title>
+    <meta name="description" content="Cursor Previewer for Javascript Projects repo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>CSS Cursor Previewer</h1>
+    <div id="wrapper">
+      <div id="css-property-column">
+        <h3>CSS Property:</h3>
+        <div id="cursor-list-container">
+          <div class="cursor-option">
+            <input type="radio" id="alias" name="cursor-input">
+            <label for="alias">alias</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="all-scroll" name="cursor-input">
+            <label for="all-scroll">all-scroll</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="auto" name="cursor-input">
+            <label for="auto">auto</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="cell" name="cursor-input">
+            <label for="cell">cell</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="context-menu" name="cursor-input">
+            <label for="context-menu">context-menu</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="col-resize" name="cursor-input">
+            <label for="col-resize">col-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="copy" name="cursor-input">
+            <label for="copy">copy</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="crosshair" name="cursor-input">
+            <label for="crosshair">crosshair</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="default" name="cursor-input">
+            <label for="default">default</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="e-resize" name="cursor-input">
+            <label for="e-resize">e-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="ew-resize" name="cursor-input">
+            <label for="ew-resize">ew-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="grab" name="cursor-input">
+            <label for="grab">grab</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="grabbing" name="cursor-input">
+            <label for="grabbing">grabbing</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="help" name="cursor-input">
+            <label for="help">help</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="move" name="cursor-input">
+            <label for="move">move</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="n-resize" name="cursor-input">
+            <label for="n-resize">n-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="ne-resize" name="cursor-input">
+            <label for="ne-resize">ne-resize</label name="cursor-input">
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="nesw-resize" name="cursor-input">
+            <label for="nesw-resize">nesw-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="ns-resize" name="cursor-input">
+            <label for="ns-resize">ns-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="nw-resize" name="cursor-input">
+            <label for="nw-resize">nw-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="nwse-resize" name="cursor-input">
+            <label for="nwse-resize">nwse-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="no-drop" name="cursor-input">
+            <label for="no-drop">no-drop</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="none" name="cursor-input">
+            <label for="none">none</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="not-allowed" name="cursor-input">
+            <label for="not-allowed">not-allowed</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="pointer" name="cursor-input">
+            <label for="pointer">pointer</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="progress" name="cursor-input">
+            <label for="progress">progress</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="row-resize" name="cursor-input">
+            <label for="row-resize">row-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="s-resize" name="cursor-input">
+            <label for="s-resize">s-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="se-resize" name="cursor-input">
+            <label for="se-resize">se-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="sw-resize" name="cursor-input">
+            <label for="sw-resize">sw-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="text" name="cursor-input">
+            <label for="text">text</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="vertical-text" name="cursor-input">
+            <label for="vertical-text">vertical-text</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="w-resize" name="cursor-input">
+            <label for="w-resize">w-resize</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="wait" name="cursor-input">
+            <label for="wait">wait</label>
+          </div>
+          <div class="cursor-option">
+            <input type="radio" id="zoom-in" name="cursor-input">
+            <label for="zoom-in">zoom-in</label>
+          </div>            
+          <div class="cursor-option">
+            <input type="radio" id="zoom-out" name="cursor-input">
+            <label for="zoom-out">zoom-out</label>
+          </div>            
+          <div class="cursor-option">
+            <input type="radio" id="initial" name="cursor-input">
+            <label for="initial">initial</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-column">
+        <div>
+          <h3>Result:</h3>
+          <textarea id="result" placeholder="Hover over this box to view cursor" readonly></textarea>
+        </div>
+        <div>
+          <h3>CSS Code:</h3>
+          <textarea id="output" readonly></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
