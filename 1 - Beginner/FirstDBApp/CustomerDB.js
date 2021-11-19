@@ -14,19 +14,21 @@ class Customer {
    * @memberof Customer
    */
    initialLoad = (customerData) => {
+     notify('Loading the customers database');
     const request = indexedDB.open(this.dbName, 1);
     request.onerror = (event) => {
-      console.log('initialLoad - Database error: ', event.target.error.code,
-        " - ", event.target.error.message);
+      let msg = 'initialLoad - Database error: '+event.target.error.code+' - '+event.target.error.message;
+      notify(msg);
+      return;
     };
 
     request.onupgradeneeded = (event) => {
-      console.log('Populating customers...');
+      notify('Populating customers...');
       const db = event.target.result;
       const objectStore = db.createObjectStore('customers', { keyPath: 'userid' });
       objectStore.onerror = (event) => {
-        console.log('initialLoad - objectStore error: ', event.target.error.code,
-          " - ", event.target.error.message);
+        let msg = 'initialLoad - objectStore error: '+event.target.error.code+' - '+event.target.error.message;
+        notify(msg);
       };
 
       // Create an index to search customers by name and email
@@ -38,6 +40,7 @@ class Customer {
       });
       db.close();
     };
+    notify('Successfully loaded database');
   }
   
   /**
@@ -48,20 +51,20 @@ class Customer {
     const request = indexedDB.open(this.dbName, 1);
 
     request.onerror = (event) => {
-      console.log('removeAllRows - Database error: ', event.target.error.code,
-        " - ", event.target.error.message);
+      let msg = 'removeAllRows - Database error: '+event.target.error.code+' - '+event.target.error.message;
+      notify(msg);
     };
 
     request.onsuccess = (event) => {
-      console.log('Deleting all customers...');
+      notify('Deleting all customers from database...');
       const db = event.target.result;
       const txn = db.transaction('customers', 'readwrite');
       txn.onerror = (event) => {
-        console.log('removeAllRows - Txn error: ', event.target.error.code,
-          " - ", event.target.error.message);
+        let msg = 'removeAllRows - Txn error: '+event.target.error.code+' - '+event.target.error.message;
+        notify(msg);
       };
       txn.oncomplete = (event) => {
-        console.log('All rows removed!');
+        notify('All rows removed!');
       };
       const objectStore = txn.objectStore('customers');
       const getAllKeysRequest = objectStore.getAllKeys();
@@ -73,25 +76,30 @@ class Customer {
     }
   }
 
+  /**
+   * Get data (query) from the database. 
+   * @memberof Customer
+   * @returns {Promise} - a promise to retrieve data from DB.
+   */
   getData = () => {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(this.dbName, 1);
       request.onerror = (event) => {
-        console.log('getData - Query error: ', event.target.error.code,
-           " - ", event.target.error.message);
+        let msg = 'getData - Query error: '+event.target.error.code+' - '+event.target.error.message;
+        notify(msg);
         reject();
       };
   
       request.onsuccess = (event) => {
-        console.log("Querying database...");
+        notify('Querying database...');
         const db = event.target.result;
         const txn = db.transaction('customers', 'readwrite');
         txn.onerror = (event) => {
-          console.log('getData - Txn error: ', event.target.error.code,
-            " - ", event.target.error.message);
+          let msg = 'getData - Txn error: '+event.target.error.code+' - '+event.target.error.message;
+          notify(msg);
         };
         txn.oncomplete = (event) => {
-          console.log("Queried.");
+          notify('Queried.');
         };
         const objectStore = txn.objectStore('customers');
         const getAllKeysRequest = objectStore.getAll();
