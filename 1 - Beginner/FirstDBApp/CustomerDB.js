@@ -98,13 +98,15 @@ class Customer {
           let msg = 'getData - Txn error: '+event.target.error.code+' - '+event.target.error.message;
           notify(msg);
         };
-        txn.oncomplete = (event) => {
-          notify('Queried.');
-        };
         const objectStore = txn.objectStore('customers');
         const getAllKeysRequest = objectStore.getAll();
         getAllKeysRequest.onsuccess = () => {
-          resolve(getAllKeysRequest.result);
+          if(Object.keys(getAllKeysRequest.result).length == 0)
+            notify('Queried, however database is empty.');
+          else{
+            notify('Queried.');
+            resolve(getAllKeysRequest.result);
+          }
         };
       }
     });

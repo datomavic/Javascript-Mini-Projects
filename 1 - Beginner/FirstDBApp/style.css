@@ -1,0 +1,79 @@
+html{
+  display: flex;
+  justify-content: center;
+}
+
+h1, h3{
+  text-align: center;
+  margin: 0;
+}
+
+#table-header{
+  margin-bottom: 10px;
+}
+#wrapper{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#container-1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 30px;
+}
+
+#table-wrapper{
+  height: 200px;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#database-table{
+  width: fit-content;
+  height: fit-content;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th{
+  border-bottom: solid 1px black;
+  padding: 0;
+  padding-left: 5px;
+}
+
+#userid-col{
+  width: 75px;
+  border-right: solid 1px black;
+}
+
+#name-col{
+  width: 200px;
+  border-right: solid 1px black;
+
+}
+
+#email-col{
+  width: 200px;
+}
+
+#buttons-wrapper{
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(164, 209, 164);
+}
+
+#container-2{
+  width: 200px;
+  height: 300px;
+}

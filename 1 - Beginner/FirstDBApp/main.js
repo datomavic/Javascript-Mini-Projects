@@ -55,8 +55,8 @@ const notify = (msg) => {
 *
 */
 
-loadDB();
-queryDB();
+// loadDB();
+// queryDB();
 
 // setTimeout(() => {
 //   console.log(data);

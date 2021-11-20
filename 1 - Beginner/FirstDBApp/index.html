@@ -9,6 +9,39 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <h1 id="title">First DB App</h1>
+    <div id='wrapper'>
+      <div id='container-1'>
+        <h3 id="table-header">Customer data</h3>
+        <div id='table-wrapper'>
+          <table id='database-table'>
+            <tr>
+              <th id='userid-col'>User ID</th>
+              <th id='name-col'>Name</th>
+              <th id='email-col'>Email</th>
+            </tr>
+            <!-- 
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> 
+            -->
+          </table>
+        </div>
+        <div id="buttons-wrapper">
+          <button id="load">Load DB</button>
+          <button id="query">Query DB</button>
+          <button id="clear">Clear DB</button>
+        </div>
+      </div>
+      <div id='container-2'>
+        <div id='notification-panel'>
+          <h3>Notification Panel</h3>
+        </div>
+      </div>
+
+    </div>
     <script src="CustomerDB.js" async defer></script>
     <script src="main.js" async defer></script>
   </body>
