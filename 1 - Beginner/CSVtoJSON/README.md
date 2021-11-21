@@ -2,6 +2,8 @@
 
 <h3>.CSV ↔️ .JSON</h3>
 
+Although this project is called CSV to JSON, this app can also convert JSON to CSV.
+
 This is a simple web page that converts .csv (comma-separated values) into .json (JavaScript Object Notation) and vice-versa.
 
 Converted data can be either copied to clipboard or downloaded as a new file.
