@@ -22,16 +22,12 @@ async function fetchStatus(){
     const status = {};
     status.lastUpdated = statusData.page.updated_at;
     status.overallStatus = statusData.status.description;
-    status.components = [];
+    status.components = {};
     for(let component of statusData.components){
       //Skip this component from API, not a real component
       if(component.name == 'Visit www.githubstatus.com for more information')
         continue;
-      let temp = {
-        name: component.name,
-        status: component.status
-      }
-      status.components.push(temp);
+      status.components[component.name] = component.status.charAt(0).toUpperCase() + component.status.substring(1);
     }
     resolve(status);
   });

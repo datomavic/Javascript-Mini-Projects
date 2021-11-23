@@ -15,6 +15,7 @@ html{
   justify-content: center;
 }
 
+
 body{
   display: flex;
   justify-content: center;
@@ -22,11 +23,22 @@ body{
   height: 100vh;
 }
 
+#banner{
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  border-bottom: solid 1px rgb(153, 182, 202);
+}
+
 #container{
   margin: auto auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#overall-status{
+  font-style: italic;
 }
 
 #components-status-title{
@@ -70,6 +82,7 @@ body{
   width: auto;
   font-size: 19px;
   margin: 0;
+  display: inline;
 }
 
 #time{
@@ -79,6 +92,15 @@ body{
 
 p{
   margin: 0;
+}
+
+.status-label{
+  display: inline;
+  /* color: #26a526; */
+}
+
+#lastUpdated{
+  display: inline;
 }
 
 /* width */
