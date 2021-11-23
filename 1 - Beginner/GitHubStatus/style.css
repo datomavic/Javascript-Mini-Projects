@@ -18,6 +18,8 @@ html{
 body{
   display: flex;
   justify-content: center;
+  margin: auto auto;
+  height: 100vh;
 }
 
 #container{
@@ -44,9 +46,18 @@ body{
 .components{
   border: solid 1px #6cddff;
   background-color: #191f3b;
-  padding: 0 15px;
-  margin-bottom: .5em;
+  padding: 10px 15px;
+  margin-bottom: .8em;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.check{
+  display: flex;
+  align-items: center;
+  margin-right: 2%;
+  visibility: hidden;
 }
 
 .component-title{
@@ -58,6 +69,15 @@ body{
 .status{
   width: auto;
   font-size: 19px;
+  margin: 0;
+}
+
+#time{
+  font-style: italic;
+  width: 150px;
+}
+
+p{
   margin: 0;
 }
 
@@ -74,4 +94,28 @@ body{
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #20293a; 
+}
+
+
+@media screen and (min-width: 701px){
+  #componentsStatus-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    width: 99%;
+  }
+  #componentsStatus{
+    display: flex;
+    justify-content: center;
+  }
+  .components-subcontainer{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .components{
+    width: 90%;
+    display: flex;
+  }
 }
