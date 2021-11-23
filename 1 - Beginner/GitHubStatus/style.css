@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+*{
+  overflow-x: hidden;
+  font-family: 'Cairo', sans-serif;
+}
+html, body{
+  width: 100vw;
+}
+
+html{
+  background-color: #101429;
+  color:#6cddff;
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+}
+
+#container{
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#components-status-title{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  align-items: flex-start;
+  font-weight: lighter;
+}
+
+#componentsStatus-container{
+  width: 90vw;
+  background-color: #101429;
+
+}
+
+.components{
+  border: solid 1px #6cddff;
+  background-color: #191f3b;
+  padding: 0 15px;
+  margin-bottom: .5em;
+  border-radius: 5px;
+}
+
+.component-title{
+  font-size: 22px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.status{
+  width: auto;
+  font-size: 19px;
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #63617c; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #20293a; 
+}

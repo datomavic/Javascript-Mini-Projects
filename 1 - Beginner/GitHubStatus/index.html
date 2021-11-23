@@ -8,8 +8,57 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
-    <script src="scraper.js" async defer></script>
-    <script src="main.js" async defer></script>
+    <div id="container">
+      <span id="overallStatus-container">
+        <h2 id='overall-status'>Github Status: ...</h2>
+      </span>
+      <div id='componentsStatus-container'>
+        <h2 id='components-status-title'>Components status</h2>
+        <div id='componentsStatus'>
+          <div class='components-subcontainer'>
+            <div class = 'components'>
+              <h3 class='component-title' id='git-operations-title'>Git Operations</h3>
+              <p class='status' id='git-operations-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='api-requests-title'>API Requests</h3>
+              <p class='status' id='api-requests-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='webhooks-title'>Webhooks</h3>
+              <p class='status' id='webhooks-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='issues-title'>Issues</h3>
+              <p class='status' id='issues-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='pull-requests-title'>Pull Requests</h3>
+              <p class='status' id='pull-requests-status'>Status: ...</p>
+            </div>
+          </div>
+          <div class='components-subcontainer'>
+            <div class = 'components'>
+              <h3 class='component-title' id='github-actions-title'>GitHub Actions</h3>
+              <p class='status' id='github-actions-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='github-packages-title'>GitHub Packages</h3>
+              <p class='status' id='github-packages-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='github-pages-title'>GitHub Pages</h3>
+              <p class='status' id='github-pages-status'>Status: ...</p>
+            </div>
+            <div class = 'components'>
+              <h3 class='component-title' id='codespaces-title'>Codespaces</h3>
+              <p class='status' id='codespaces-status'>Status: ...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scraper.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
