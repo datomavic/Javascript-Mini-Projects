@@ -7,3 +7,5 @@ The app accomplishes this via a Fetch API found at https://www.githubstatus.com/
 It will also display the date and time that the Fetch API was last updated.
 
 <img src="https://i.imgur.com/OIVMTZs.png">
+
+Try it out here: https://datomavic-githubstatus.netlify.app/ 
