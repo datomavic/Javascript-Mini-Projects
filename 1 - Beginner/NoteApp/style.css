@@ -32,6 +32,12 @@ h1, h3{
   text-align: center;
 }
 
+#notes-wrapper{
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #textbox{
   width: 90%;
@@ -47,6 +53,20 @@ h1, h3{
   font-size: 20px;
 }
 
+#buttons-wrapper{
+  margin-top: 1em;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  width: 300px;
+}
+
+button:hover{
+  cursor: pointer;
+}
 @media screen and (min-width: 775px){
 
   #textbox{

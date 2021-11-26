@@ -5,13 +5,27 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id='container'>
       <h1>Notes App</h1>
       <h3>This app will save your notes when you refresh.</h3>
-      <textarea id='textbox'></textarea>
+      <div id='notes-wrapper'>
+        <textarea id='textbox'></textarea>
+        <div id='buttons-wrapper'>
+          <button name='Copy to Clipboard' id='copy'>
+            <i id="copy-icon" class="fas fa-copy fa-2x"></i>
+          </button>
+          <button name='Save as .txt file' id='save'>
+            <i class="fas fa-download fa-2x"></i>
+          </button>
+          <button name='Clear' id='clear'>
+            <i class="fas fa-trash-alt fa-2x"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <script src='notes.js'></script>
     <script src="main.js"></script>

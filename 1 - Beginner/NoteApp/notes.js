@@ -15,9 +15,9 @@ class Notes{
 
   /**
    * @memberof Notes
-   * Will delete the content of the notes object.
+   * Will clear the content of the notes object.
    */
-  delete(){
+  clear(){
 
   }
 
