@@ -1,0 +1,57 @@
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+  margin: auto auto;
+  height: 100vh;
+}
+
+body{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  background-color: #273851;
+  color: #0DA5EF;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  margin: auto auto;
+}
+
+h1{
+  margin: 0;
+}
+
+h1, h3{
+  text-align: center;
+}
+
+
+#textbox{
+  width: 90%;
+  height: 70vh;
+  resize: none;
+  border-radius: 5px;
+  border: solid 1px #5B748E;
+  background-color: #F0F2F2;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 775px){
+
+  #textbox{
+    max-width: 720px;
+    max-height: 720px;
+    font-size: 30px;
+  }
+}
