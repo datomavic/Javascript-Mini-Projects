@@ -1,0 +1,1 @@
+let notes = new Notes();
