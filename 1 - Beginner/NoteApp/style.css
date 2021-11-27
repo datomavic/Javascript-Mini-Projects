@@ -63,7 +63,7 @@ h1, h3{
 #buttons-wrapper{
   margin-top: .5em;
   width: 92%;
-  max-width: 720px;
+  max-width: 735px;
   display: flex;
   justify-content: space-around;
 }

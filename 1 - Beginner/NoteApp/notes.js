@@ -82,9 +82,9 @@ class Notes{
 
   /**
    * @memberof Notes
-   * Will save the content of the notes object as a .txt file
+   * Will download the content of the notes object as a .txt file
    */
-  save(){
+  download(){
 
   }
 
