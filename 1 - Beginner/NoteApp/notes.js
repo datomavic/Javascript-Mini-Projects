@@ -10,10 +10,11 @@ class Notes{
    * Will copy the content of the note object to the users clipboard.
    */
   copy(){
-    if(this.#content.length == 0 || copy.running)
+    if(!this.#content || this.copy.running)
       return;
     //Function property to avoid code from executing twice asynchronously
-    copy.running = true;
+    this.copy.running = true;
+    console.log(this.copy.running);
     //Element selectors for copy-button icons
     let icon = document.querySelector("#copy-icon");
     let button = document.querySelector("#copy-button");
@@ -77,7 +78,6 @@ class Notes{
    * Will clear the content of the notes object.
    */
   clear(){
-
   }
 
   /**
@@ -106,5 +106,9 @@ class Notes{
    */
   set content(data){
     this.#content = data;
+  }
+
+  toString(){
+    return ""+this.#content;
   }
 }
