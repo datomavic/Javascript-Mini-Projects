@@ -1,11 +1,13 @@
-class Notes{
+export default class Notes{
   #content;
   #prev;
+  #storage;
   textbox;
 
-  constructor(textbox){
+  constructor(textbox, storage){
     this.#content = null;
     this.#prev = null;
+    this.#storage = storage;
     this.textbox = textbox;
   }
 
@@ -145,6 +147,23 @@ class Notes{
    */
   set content(data){
     this.#content = data;
+  }
+
+  /**
+   * @memberof Notes
+   * Getter for this Notes' window.localStorage
+   */
+  get storage(){
+    return this.#storage;
+  }
+
+  /**
+   * @memberof Notes
+   * Setter for this Notes' window.localStorage
+   * @param {Object} storage - a localStorage object for this Notes
+   */
+  set storage(storage){
+    this.#storage = storage;
   }
 
   toString(){
