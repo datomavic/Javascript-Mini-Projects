@@ -1,9 +1,10 @@
-//Our notes object
-let notes = new Notes();
-
 //Query selectors
-let buttons = document.querySelectorAll('button');
-let notepad = document.querySelector('#textbox');
+const textbox = document.querySelector('#textbox');
+const buttons = document.querySelectorAll('button');
+const notepad = document.querySelector('#textbox');
+
+//Our notes object
+const notes = new Notes(textbox);
 
 //Add event listeners
 buttons.forEach(element => {
@@ -12,7 +13,7 @@ buttons.forEach(element => {
 notepad.addEventListener('input', updateNotes);
 
 /**
- * Process function for our notepad event listener. Will update
+ * Updater for our notepad event listener. Will update
  * our Notes object with the content of the notepad.
  */
 function updateNotes(){
