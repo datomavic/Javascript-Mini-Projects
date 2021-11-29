@@ -13,12 +13,28 @@ html, body{
 
 body{
   display: flex;
+  flex-direction: column;
   height: 100%;
   justify-content: center;
   background-color: #273851;
   color: #0DA5EF;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+#add-wrapper{
+  width: 100%;
+}
+
+#add-button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 4%;
+  float: right;
+}
+
+#add-icon:hover{
+  opacity: .8;
 }
 
 #container{
@@ -31,11 +47,9 @@ body{
 }
 
 h1{
-  margin: 0;
-}
-
-h1, h3{
   text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 #notes-wrapper{
@@ -44,6 +58,7 @@ h1, h3{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 #textbox{
@@ -68,7 +83,7 @@ h1, h3{
   justify-content: space-around;
 }
 
-button{
+.notes-button{
   width: 32%;
   min-width: 50px;
   height: 50px;
@@ -79,6 +94,15 @@ button{
 
 button:hover{
   cursor: pointer;
+}
+
+#add-button{
+  background-color: transparent;
+  border: none;
+}
+
+#add-button *{
+  color: #0DA5EF;
 }
 @media screen and (min-width: 775px){
 
