@@ -8,7 +8,6 @@ html, body{
   width: 100%;
   overflow-x: hidden;
   margin: auto auto;
-  height: 100vh;
 }
 
 body{
@@ -52,7 +51,7 @@ h1{
   margin-bottom: 10px;
 }
 
-#notes-wrapper{
+.notes-wrapper{
   margin: auto auto;
   width: 100%;
   display: flex;
@@ -61,7 +60,7 @@ h1{
   margin-bottom: 20px;
 }
 
-#textbox{
+.textbox{
   width: 90%;
   height: 70vh;
   resize: none;
@@ -75,7 +74,7 @@ h1{
   font-size: 20px;
 }
 
-#buttons-wrapper{
+.buttons-wrapper{
   margin-top: .5em;
   width: 92%;
   max-width: 735px;
@@ -106,7 +105,7 @@ button:hover{
 }
 @media screen and (min-width: 775px){
 
-  #textbox{
+  .textbox{
     max-width: 720px;
     max-height: 720px;
     font-size: 30px;
