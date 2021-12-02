@@ -127,7 +127,7 @@ export default class Notes{
           element.style.opacity = op;
           element.style.filter = 'alpha(opacity=' + op * 100 + ")";
           op -= op * 0.1;
-      }, 3);
+      }, 6);
     }
     fade(this.element);
   }

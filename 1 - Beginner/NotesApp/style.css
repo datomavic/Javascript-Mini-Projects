@@ -34,7 +34,7 @@ body{
   margin-top: 20px;
   margin-bottom: 20px;
   float: right;
-  width: 115px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -53,12 +53,17 @@ body{
 }
 
 #add-button *{
-  color: black;
+  color: #000000;
+}
+
+#add-button h3{
+  padding-left: 5px;
 }
 
 #add-button i{
   padding-top: 2px;
-  zoom: .8;
+  padding-right: 5px;
+  zoom: .6;
 }
 
 #container{
