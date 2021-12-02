@@ -9,14 +9,18 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id='add-wrapper'>
-      <button id='add-button'>
+
+    <header id='header'>
+      <h2>Notes App</h2>
+      <button id='add-button' title='Add a new note'>
+        <h3>Add note</h3>
         <i id='add-icon' class="fas fa-plus fa-2x"></i>
       </button>
-    </div>
+    </header>
+
     <div id='container'>
-      <h1>Notes App</h1>
       <div class='notes-wrapper'>
+        <span class='notepadID'></span>
         <textarea class='textbox'></textarea>
         <div class='buttons-wrapper'>
           <button class='copy-button notes-button' title='Copy to Clipboard'>
@@ -25,7 +29,7 @@
           <button class='download-button notes-button' title='Download as .txt file'>
             <i class="fas fa-download fa-2x"></i>
           </button>
-          <button class='clear-button notes-button' title='Clear'>
+          <button class='clear-button notes-button' title='Delete this note'>
             <i class="fas fa-trash-alt fa-2x"></i>
           </button>
         </div>

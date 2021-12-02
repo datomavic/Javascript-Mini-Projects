@@ -2,14 +2,62 @@
 import Notes from './notes.js';
 
 //Note widget counter for ID
-let counter = 1;
+let counter = {
+  id: 0
+};
 
-//Local storage & Note widget HTML
+
+//Local storage & Create copy of note widget
 const noteStorage = window.localStorage;
-const noteClone = document.querySelector('.notes-wrapper').cloneNode(true);
+const noteWidget = document.querySelector('.notes-wrapper');
+const copy = noteWidget.cloneNode(true);
 
-//Initial note widget initialization
-const notes1 = new Notes(document.querySelector('.notes-wrapper'), noteStorage);
+//Load initial note widget:
+new Notes(noteWidget, noteStorage, counter);
+
+document.querySelector('#add-button').addEventListener('click', () => {
+  const clone = copy.cloneNode(true);
+  const container = document.querySelector('#container');
+  new Notes(clone, noteStorage, counter);
+
+  const scroll= (element, duration) => {
+    const yPosition = window.pageYOffset + document.getElementById(element.id).getBoundingClientRect().top;
+    const startingY = window.pageYOffset;
+    const diff = yPosition - startingY;
+    let start;
+
+    window.requestAnimationFrame(function step(timestamp){
+      if(!start) 
+        start = timestamp;
+      let time = timestamp - start;
+      let percent = Math.min(time / duration, 1);
+      
+
+      console.log(startingY + diff * percent);
+      window.scrollTo(0, startingY + diff * percent);
+
+      if(time < duration)
+        window.requestAnimationFrame(step);
+    })
+  }
+
+  const unfade = (element) => {
+    container.appendChild(element);
+    scroll(element, 300);
+    let op = 0.1;  // initial opacity
+    let timer = setInterval(function () {
+        if (op >= 1){
+          clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 21);
+  }
+
+  unfade(clone);
+  
+});
 //Query selectors
 // const buttons = document.querySelectorAll('button');
 // const notepad = document.querySelector('.textbox');

@@ -1,13 +1,19 @@
 export default class Notes{
 
-  constructor(element, storage){
+  constructor(element, storage, counter){
     this.content = null;
     this.prev = null;
     this.storage = storage;
     this.copyRunning = false;
     this.element = element;
+    this.counter = counter;
     this.textbox = this.element.querySelector('.textbox');
-
+    
+    //Add ID to element based on counter
+    this.element.id = counter.id;
+    this.element.querySelector('.notepadID').innerText = this.element.id;
+    counter.id++;
+    
     //Add event listeners for this notes buttons/textbox
     this.element.querySelectorAll('button').forEach((button) => {
       const type = ""+button.className.split(" ")[0];
@@ -123,7 +129,6 @@ export default class Notes{
           op -= op * 0.1;
       }, 3);
     }
-
     fade(this.element);
   }
 

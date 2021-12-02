@@ -21,19 +21,44 @@ body{
   margin-bottom: auto;
 }
 
-#add-wrapper{
-  width: 100%;
+#header{
+  margin: auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
 }
+
 
 #add-button{
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: 4%;
   float: right;
+  width: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #0DA5EF;
+  border-radius: 15px;
+  border: none;
+  padding: 0;
+  height: 30px;
+  transition: .2s;
+  position: sticky;
 }
 
-#add-icon:hover{
+#add-button:hover{
   opacity: .8;
+  transition: .2s;
+}
+
+#add-button *{
+  color: black;
+}
+
+#add-button i{
+  padding-top: 2px;
+  zoom: .8;
 }
 
 #container{
@@ -45,12 +70,6 @@ body{
   margin: auto auto;
 }
 
-h1{
-  text-align: center;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
 .notes-wrapper{
   margin: auto auto;
   width: 100%;
@@ -58,6 +77,17 @@ h1{
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.notepadID{
+  color: rgb(105, 105, 105);
+  padding-right: 10px;
+  padding-top: 5px;
+  position: absolute;
+  width: 90%;
+  display:flex;
+  justify-content: flex-end;
+  opacity: .5;
 }
 
 .textbox{
@@ -95,19 +125,19 @@ button:hover{
   cursor: pointer;
 }
 
-#add-button{
-  background-color: transparent;
-  border: none;
-}
 
-#add-button *{
-  color: #0DA5EF;
-}
+
 @media screen and (min-width: 775px){
 
   .textbox{
     max-width: 720px;
     max-height: 720px;
     font-size: 30px;
+  }
+  #header{
+    max-width: 720px;
+  }
+  .notepadID{
+    max-width: 720px;
   }
 }
