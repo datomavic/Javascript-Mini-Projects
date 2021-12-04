@@ -1,12 +1,21 @@
 export default class Notes{
 
+  /**
+   * @constructor
+   * @param {Object} element is a new document element for a newly created Notes object 
+   * @param {Object} storage is the browser's localStorage object
+   * @param {Object} counter a simple object containing a counter to be incremented
+   */
   constructor(element, storage, counter){
+    //Notepad's text content
     this.content = null;
-    this.prev = null;
     this.storage = storage;
+    //Boolean for this Class' copy() function.
+    //Prevents copy() from running if it's already currently running.
     this.copyRunning = false;
     this.element = element;
     this.counter = counter;
+    //Query selector to grab the <textarea> element from this.element
     this.textbox = this.element.querySelector('.textbox');
     
     //Add ID to element based on counter

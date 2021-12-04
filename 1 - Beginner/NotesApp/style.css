@@ -29,7 +29,6 @@ body{
   width: 90%;
 }
 
-
 #add-button{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -131,7 +130,6 @@ button:hover{
 }
 
 
-
 @media screen and (min-width: 775px){
 
   .textbox{
@@ -145,4 +143,5 @@ button:hover{
   .notepadID{
     max-width: 720px;
   }
+
 }
