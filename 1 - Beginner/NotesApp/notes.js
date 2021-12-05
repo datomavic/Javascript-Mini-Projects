@@ -4,26 +4,14 @@ export default class Notes{
    * @constructor
    * @param {Object} element is a new document element for a newly created Notes object 
    * @param {Object} storage is the browser's localStorage object
-   * @param {Object} counter a simple object containing a counter to be incremented
+   * @param {Object} counter a simple Global object containing only a counter to be incremented
    */
-  constructor(element, storage, counter){
-    //Notepad's text content
-    this.content = null;
-    this.storage = storage;
-    //Boolean for this Class' copy() function.
-    //Prevents copy() from running if it's already currently running.
-    this.copyRunning = false;
+  constructor(element, id, content, storage){
     this.element = element;
-    this.counter = counter;
-    //Query selector to grab the <textarea> element from this.element
-    this.textbox = this.element.querySelector('.textbox');
-    
     //Add ID to element based on counter
-    this.element.id = counter.id;
+    this.element.id = id;
     this.element.querySelector('.notepadID').innerText = this.element.id;
-    counter.id++;
-    
-    //Add event listeners for this notes buttons/textbox
+    //Add event listener for this Notes buttons
     this.element.querySelectorAll('button').forEach((button) => {
       const type = ""+button.className.split(" ")[0];
       switch(type){
@@ -39,7 +27,21 @@ export default class Notes{
       }
     });
 
+    this.content = content;
+
+    //Update window.localStorage and set its value to content of this Notes
+    this.storage = storage; 
+    this.storage.setItem(this.element.id, this.content);
+
+    //Query selector to grab the <textarea> element from this.element
+    this.textbox = this.element.querySelector('.textbox');
+    //Add event listener for this Notes textbox (<textarea>)
     this.textbox.addEventListener('input', this.update.bind(this));
+    if(this.content){
+      this.textbox.innerText = this.content;
+    }
+    //Boolean for copy() function. Prevents copy animation from running if it's already currently running.
+    this.copyRunning = false;
   }
 
   /**
@@ -49,6 +51,7 @@ export default class Notes{
    */
   update(){
     this.content = this.textbox.value;
+    this.storage.setItem(this.element.id, this.content);
   }
   /**
    * @memberof Notes
@@ -138,19 +141,9 @@ export default class Notes{
           op -= op * 0.1;
       }, 6);
     }
-    fade(this.element);
-  }
 
-  /**
-   * @memberof Notes
-   * Will undo the previous clear function in case user accidentally
-   * clicks clear button.
-   */
-  undo(){
-    if(!this.prev)
-      return;
-    this.content = this.prev;
-    this.textbox.value = this.content;
+    fade(this.element);
+    this.storage.removeItem(this.element.id);
   }
 
   /**
