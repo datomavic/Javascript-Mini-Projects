@@ -4,6 +4,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html{
+  width: 100vw;
+}
+
 html, body{
   width: 100%;
   overflow-x: hidden;
@@ -26,7 +30,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
 }
 
 #add-button{
@@ -66,37 +70,35 @@ body{
 }
 
 #container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: fit-content;
-  margin: auto auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 600px));
+  grid-gap: 3em;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .notes-wrapper{
   margin: auto auto;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 .notepadID{
-  color: rgb(105, 105, 105);
-  padding-right: 10px;
+  color: rgb(251, 251, 251);
   padding-top: 5px;
-  position: absolute;
-  width: 90%;
   display:flex;
   justify-content: flex-end;
-  opacity: .5;
+  opacity: .8;
+  margin-bottom: .2em;
 }
 
 .textbox{
-  width: 90%;
-  height: 70vh;
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
   resize: none;
   border-radius: 5px;
   border: solid 1px #5B748E;
@@ -110,14 +112,13 @@ body{
 
 .buttons-wrapper{
   margin-top: .5em;
-  width: 92%;
-  max-width: 735px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 .notes-button{
-  width: 32%;
+  width: 34%;
   min-width: 50px;
   height: 50px;
   display: flex;
@@ -131,17 +132,4 @@ button:hover{
 
 
 @media screen and (min-width: 775px){
-
-  .textbox{
-    max-width: 720px;
-    max-height: 720px;
-    font-size: 30px;
-  }
-  #header{
-    max-width: 720px;
-  }
-  .notepadID{
-    max-width: 720px;
-  }
-
 }
