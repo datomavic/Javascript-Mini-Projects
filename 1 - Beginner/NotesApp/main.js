@@ -5,7 +5,7 @@ import Notes from './Notes.js';
 const noteStorage = window.localStorage;
 
 //Notepad counter for setting ID
-const counter = { id: 0 };
+const counter = { id: 1 };
 
 //Create universal copy of our note widget.
 const copy = document.querySelector('#template').cloneNode(true);
