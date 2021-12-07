@@ -12,6 +12,9 @@ const copy = document.querySelector('#template').cloneNode(true);
 
 //Event listener for subsequent note widgets upon 'Add note' button press.
 document.querySelector('#add-button').addEventListener('click', addNote);
+//Event listner for clearing localStorage button
+document.querySelector('#clear-storage').addEventListener('click', clearStorage);
+
 
 //If notestorage is empty, initialize our first notepad and add to storage
 if(noteStorage.length == 0){
@@ -92,6 +95,17 @@ function addNote(){
 
   //Execute unfade function which contains an execution of our smoothScroll function
   unfade(clone);
+}
+
+/**
+ * Clear local storage function.
+ * This will clear the local storage completely once it is clicked.
+ */
+function clearStorage(){
+  if(confirm("Are you sure you would like to clear storage? This will delete everything you have done.")){
+    noteStorage.clear();
+    window.location.reload();
+  }
 }
 
 /**
