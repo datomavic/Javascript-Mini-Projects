@@ -166,5 +166,19 @@ button:hover{
 }
 
 
-@media screen and (min-width: 775px){
+@media screen and (max-width: 458px){
+  #header{
+    margin-top: 1em;
+  }
+  #header-buttons-wrapper{
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+  }
+  #header-buttons-wrapper *{
+    margin: 0;
+  }
+  #clear-storage, #add-button{
+    margin: .5em 0;
+  }
 }
