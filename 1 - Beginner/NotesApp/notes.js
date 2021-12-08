@@ -10,6 +10,7 @@ export default class Notes{
     this.element = element;
     //Add ID to element based on counter
     this.element.id = id;
+    this.title = id;
     this.element.querySelector('.notepadID').innerText = this.element.id;
     //Add event listener for this Notes buttons
     this.element.querySelectorAll('button').forEach((button) => {
@@ -157,7 +158,7 @@ export default class Notes{
 
     //Create a blob attached to file and anchor tag 'under-the-hood', and click it upon download button press
     const type = '.txt;charset=utf-8';
-    const fileName = 'notes.txt';
+    const fileName = `${this.title}.txt`;
     const blob = new Blob([this.content], {type});
     const anchor = document.createElement('a');
     const url = URL.createObjectURL(blob);
