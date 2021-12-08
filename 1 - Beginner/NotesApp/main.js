@@ -42,7 +42,7 @@ else{
 function addNote(){
   //If all notepads were deleted and none exist in document, reset our counter.
   if(noteStorage.length == 0)
-    counter.id = 0;
+    counter.id = 1;
   else
     counter.id = lastItem(orderedStorage(noteStorage)) + 1;
 
