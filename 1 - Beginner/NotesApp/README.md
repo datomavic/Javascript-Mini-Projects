@@ -14,3 +14,16 @@ New note widgets can be added to the page dynamically, as well as deleted by cli
 This app utilizes window.localStorage which is an in-browser storage tool that allows data to be stored in the client's browser. Note widget's data will be retained upon page refresh or page reload. 
 
 Storage can be cleared by clicking the red 'Clear Storage' button. This will wipe window.localStorage and create a fresh page. 
+
+<img src='https://i.imgur.com/euDez2m.gif'>
+
+
+-------
+
+Mobile view: 
+
+<img src='https://i.imgur.com/NFaC6S4.gif'>
+
+------
+
+Try it out here: https://datomavic-notesapp.netlify.app/
