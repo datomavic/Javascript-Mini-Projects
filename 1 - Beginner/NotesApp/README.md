@@ -1,5 +1,8 @@
 NotesApp
-------
+---
+Vanilla JavaScript | HTML | CSS
+
+---
 
 This notes app utilizes window.localStorage which allows the browser to 'remember' each note widget and its value. 
 
@@ -19,11 +22,5 @@ Storage can be cleared by clicking the red 'Clear Storage' button. This will wip
 
 
 -------
-
-Mobile view: 
-
-<img src='https://i.imgur.com/NFaC6S4.gif'>
-
-------
 
 Try it out here: https://datomavic-notesapp.netlify.app/
