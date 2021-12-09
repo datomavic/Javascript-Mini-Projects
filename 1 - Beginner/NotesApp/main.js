@@ -60,9 +60,11 @@ function addNote(){
    * @param {Integer} duration duration for scroll animation 
    */
   const smoothScroll = (element, duration) => {
+    const spacer = getComputedStyle(document.querySelector('#spacer')).getPropertyValue('height');
+    console.log(spacer);
     const yPosition = window.pageYOffset + document.getElementById(element.id).getBoundingClientRect().top;
     const startingY = window.pageYOffset;
-    const diff = yPosition - startingY;
+    const diff = (yPosition - startingY) - 100;
     let start;
     window.requestAnimationFrame(function step(timestamp){
       if(!start) 

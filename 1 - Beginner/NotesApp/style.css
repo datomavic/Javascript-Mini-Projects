@@ -26,16 +26,27 @@ body{
 }
 
 #header{
-  margin: auto auto;
+  position: fixed;
+  top: 0;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  background-color: #273851;
+  z-index: 999;
+}
+
+#header-content{
+  margin: auto auto;
+  display: flex;
   width: 90%;
+  justify-content: space-between;
 }
 
 #header-buttons-wrapper{
   display: flex;
-  width: 300px;
+  width: 280px;
   justify-content: space-around;
 }
 
@@ -76,7 +87,7 @@ body{
 }
 
 #clear-storage{
-  margin-top: 20px;
+  margin-top: 21px;
   margin-bottom: 20px;
   float: right;
   width: 150px;
@@ -101,6 +112,10 @@ body{
 #clear-storage:hover{
   opacity: .8;
   transition: .2s;
+}
+
+#spacer{
+  height: 75px;
 }
 
 #container{
@@ -133,7 +148,7 @@ body{
 .textbox{
   width: 99%;
   max-width: 600px;
-  height: 450px;
+  height: 410px;
   resize: none;
   border-radius: 5px;
   border: solid 1px #5B748E;
@@ -167,9 +182,6 @@ button:hover{
 
 
 @media screen and (max-width: 458px){
-  #header{
-    margin-top: 1em;
-  }
   #header-buttons-wrapper{
     flex-direction: column;
     align-items: flex-end;
@@ -180,5 +192,8 @@ button:hover{
   }
   #clear-storage, #add-button{
     margin: .5em 0;
+  }
+  #spacer{
+    height: 95px;
   }
 }
