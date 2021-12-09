@@ -38,9 +38,10 @@ export default class Notes{
     this.textbox = this.element.querySelector('.textbox');
     //Add event listener for this Notes textbox (<textarea>)
     this.textbox.addEventListener('input', this.update.bind(this));
-    if(this.content){
-      this.textbox.innerText = this.content;
-    }
+
+    if(this.content)
+      this.textbox.innerHTML = this.content;
+
     //Boolean for copy() function. Prevents copy animation from running if it's already currently running.
     this.copyRunning = false;
   }
@@ -54,10 +55,12 @@ export default class Notes{
     this.content = this.textbox.value;
     this.storage.setItem(this.element.id, this.content);
   }
+
   /**
    * @memberof Notes
    * Will copy the content of the note object to the users clipboard.
    */
+
   copy(){
     if(!this.content || this.copyRunning)
       return;
