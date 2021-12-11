@@ -1,6 +1,6 @@
 NotesApp
 ---
-Vanilla JavaScript | HTML | CSS
+This app was built with: <i>Vanilla JavaScript, HTML, CSS.</i>
 
 ---
 
