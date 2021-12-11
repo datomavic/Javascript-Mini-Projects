@@ -11,8 +11,9 @@ body{
 
 #grid-container{
   margin: auto auto;
-  max-width: 1000px;
+  max-width: 650px;
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, 21px);
 }
 
