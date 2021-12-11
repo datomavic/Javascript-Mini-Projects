@@ -1,0 +1,26 @@
+html{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#grid-container{
+  margin: auto auto;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 21px);
+}
+
+.box{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+}
