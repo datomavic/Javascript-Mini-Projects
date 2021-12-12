@@ -39,7 +39,6 @@ function onClickProcess(){
  * convert this file into a string to be converted.
  */
 function upload(){
-  debugger;
   let fileReader = new FileReader();
   fileReader.readAsText(this.files[0]);
   fileReader.onload = () => {
