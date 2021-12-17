@@ -1,3 +1,11 @@
+/**
+ * @class PomodorGrid
+ * This will be our Pomodoro Grid object. It will be constructed
+ * as a grid of a specified size, which will be created in the 
+ * DOM once initiated. 
+ * 
+ * Each grid will potentially contain a 'tomato' and each tomato will represent 25 mins of study time.
+ */
 export default class PomodoroGrid{
   /**
    * @memberof PomodoroGrid
