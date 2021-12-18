@@ -16,9 +16,11 @@ export default class PomodoroGrid{
     //Constructor fields
     this.container = container;
     this.size = size;
+    
     //Additional fields for our grid class.
     this.pomArray;
-    this.counter;
+    this.tomatos = 0;
+
     //Initialize our grid with these fields/properties.
     this.initialize.call(this);
   }
@@ -29,7 +31,7 @@ export default class PomodoroGrid{
    */
   initialize(){
     this.pomArray = [];
-    this.counter = 0;
+    this.tomatos = 0;
     while(this.container.firstChild)
       this.container.removeChild(this.container.firstChild);
     const boxElement = document.createElement('div');
@@ -49,10 +51,9 @@ export default class PomodoroGrid{
   addTomato(){
     const tomato = document.createElement('img');
     tomato.src = './tomato.png';
-    document.getElementById(this.counter).appendChild(tomato);
+    document.getElementById(this.tomatos).appendChild(tomato);
     this.pomArray[this.counter] = true;
-    this.counter++;
-    console.log(this.pomArray);
+    this.tomatos++;
   }
 
   /**
